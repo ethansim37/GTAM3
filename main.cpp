@@ -8,6 +8,8 @@ into the powershell terminal*/
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include "json.hpp" // Include the nlohmann/json library header
 
 int main() {
     std::string name;
@@ -17,4 +19,15 @@ int main() {
 
     std::cout << "Hello " << name << "!"; // This line prints "Hello " followed by the value of
                                         // the variable "name" and an exclamation mark to the console.
+
+   
+
+    std::string longitude = "123.456"; // Example longitude value              
+
+    nlohmann::json j; // Create a JSON object using the nlohmann/json library
+    j["longitude"] = longitude;
+
+    std::ofstream file("LocationData.json");
+    file << j.dump(4); // Pretty print with 4 spaces
+    file.close();
 }
