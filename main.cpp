@@ -12,6 +12,7 @@ into the powershell terminal*/
 #include "json.hpp" // Include the nlohmann/json library header
 
 int main() {
+while (true) { // Infinite loop to continuously ask for user input
     std::string name;
     std::cout << "Enter your name: "; // "cout" means "console output" and is used to print text to the console.
                                       // The "<<" operator is used to send the string "Enter your name: " to the console.
@@ -34,4 +35,5 @@ int main() {
         file << j.dump(4); // Pretty print with 4 spaces
         // Close the file
         file.close();
+}
 }
