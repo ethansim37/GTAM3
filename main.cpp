@@ -24,10 +24,14 @@ int main() {
 
     std::string longitude = "123.456"; // Example longitude value              
 
-    nlohmann::json j; // Create a JSON object using the nlohmann/json library
-    j["longitude"] = longitude;
+        nlohmann::json j; // Create a JSON object using the nlohmann/json library
+        // Set the key "longitude" in the JSON object to the value stored in the variable longitude
+        j["longitude"] = longitude;
 
-    std::ofstream file("LocationData.json");
-    file << j.dump(4); // Pretty print with 4 spaces
-    file.close();
+        // Open the file LocationData.json for writing
+        std::ofstream file("LocationData.json");
+        // Write the JSON object to the file in a human-readable format (4 spaces indentation)
+        file << j.dump(4); // Pretty print with 4 spaces
+        // Close the file
+        file.close();
 }
