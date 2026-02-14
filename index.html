@@ -12,6 +12,8 @@
 </head>
 <body>
     <h2>GTAM3 Map Viewer</h2>
+    <input type="text" id="fileNameInput" placeholder="Enter JSON filename or address" style="width:300px;">
+    <button onclick="loadFile()">Load File</button>
     <div id="map"></div>
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -24,27 +26,47 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Load LocationData.json
-        fetch('LocationData.json')
-            .then(response => response.json())
-            .then(data => {
-                // Assuming data.longitude and data.latitude are arrays of equal length
-                for (let i = 0; i < data.longitude.length; i++) {
-                    let lon = parseFloat(data.longitude[i]);
-                    let lat = parseFloat(data.latitude[i]);
-                    if (!isNaN(lon) && !isNaN(lat)) {
-                        L.marker([lat, lon]).addTo(map)
-                            .bindPopup(`Point ${i + 1}<br>Lat: ${lat}<br>Lon: ${lon}`);
-                    }
+        function plotData(data) {
+            // Remove existing markers
+            if (window.markers) {
+                window.markers.forEach(m => map.removeLayer(m));
+            }
+            window.markers = [];
+            for (let i = 0; i < data.longitude.length; i++) {
+                let lon = parseFloat(data.longitude[i]);
+                let lat = parseFloat(data.latitude[i]);
+                if (!isNaN(lon) && !isNaN(lat)) {
+                    let marker = L.marker([lat, lon]).addTo(map)
+                        .bindPopup(`Point ${i + 1}<br>Lat: ${lat}<br>Lon: ${lon}`);
+                    window.markers.push(marker);
                 }
-                // Optionally, center map on first point
-                if (data.latitude.length > 0 && data.longitude.length > 0) {
-                    map.setView([parseFloat(data.latitude[0]), parseFloat(data.longitude[0])], 10);
-                }
-            })
-            .catch(err => {
-                alert("Could not load LocationData.json. Make sure you're running a local server.");
-            });
+            }
+            if (data.latitude.length > 0 && data.longitude.length > 0) {
+                map.setView([parseFloat(data.latitude[0]), parseFloat(data.longitude[0])], 10);
+            }
+        }
+
+        function loadFile() {
+            var fileName = document.getElementById('fileNameInput').value;
+            if (!fileName) {
+                alert('Please enter a filename or address.');
+                return;
+            }
+            fetch(fileName)
+                .then(response => {
+                    if (!response.ok) throw new Error('File not found or inaccessible');
+                    return response.json();
+                })
+                .then(data => {
+                    plotData(data);
+                })
+                .catch(err => {
+                    alert('Could not load file: ' + err.message);
+                });
+        }
+
+        // Optionally, load default file on page load
+        // loadFile('LocationData.json');
     </script>
 </body>
 </html>
