@@ -44,7 +44,7 @@ void gainLongAndLat(){
         
         break; // Exit the loop if the user types "exit"
     }
-        std::string latitude = gain("Latitude");
+    std::string latitude = gain("Latitude");
     std::cout << "\n";
     
     longitudeList.push_back(std::stod(longitude));
@@ -61,6 +61,24 @@ if (menu == "1") {
     std::string newFileName = gain("Enter the name of the new file (Include .json at the end)");
     std::string fullPath = userDataFolder + newFileName;
 
+if (std::filesystem::exists(fullPath)) {
+    // File already exists, ask user if they want to overwrite it
+    std::string safetyCheck = gain("File already exists. Do you want to overwrite it? (y/n)");
+    if (safetyCheck == "y") {
+        gainLongAndLat(); //Gain info from user and store in lists
+
+        std::ofstream file(fullPath, std::ofstream::trunc); // Create a new file in User Data Files
+        nlohmann::json jsonData; // Create a JSON object
+        jsonData["longitude"] = longitudeList; // Add the list of data to the JSON
+        jsonData["latitude"] = latitudeList; // Add the list of data to the JSON object
+        file << jsonData.dump(4); // Write the JSON object to the file with indentation
+        file.close(); // Close the file after writing
+    } else if (safetyCheck == "n") {
+        std::cout << "Exiting program.\n";
+    }
+ 
+} else {
+    // File does not exist, safe to make new one
     gainLongAndLat(); //Gain info from user and store in lists
 
     std::ofstream file(fullPath, std::ofstream::trunc); // Create a new file in User Data Files
@@ -69,6 +87,7 @@ if (menu == "1") {
     jsonData["latitude"] = latitudeList; // Add the list of data to the JSON object
     file << jsonData.dump(4); // Write the JSON object to the file with indentation
     file.close(); // Close the file after writing
+}
 
 }
 else if (menu == "2") {
