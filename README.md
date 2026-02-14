@@ -28,8 +28,8 @@
 ## How to Run the C++ Program
 1. Open the GTAM3 folder in the terminal (right-click on folder and left-click "open in terminal")  
 2. If it's the first time running since changes to the code, paste "g++ main.cpp -o GTAM_Point_Dropper" into the terminal
-**3. Run the program by pasting ".\GTAM_Point_Dropper.exe" into the terminal"
-**
+3. **Run the program by pasting ".\GTAM_Point_Dropper.exe" into the terminal"**
+
 ## How to View the Map
 1. Open PowerShell in this folder  
 2. Start a local server by pasting "python -m http.server 8000" into the terminal  
