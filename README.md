@@ -17,7 +17,7 @@
 2. Start a local server:
    python -m http.server 8000
 3. Open your browser and go to:
-   http://localhost:8000/GTAM3%20Viewer.html
+   http://localhost:8000/GTAM3%20Viewer.html              ************************** maybe it's actually http://localhost:8000/
 
 ## Notes
 - The C++ program will update LocationData.json.
