@@ -41,14 +41,7 @@ void gainLongAndLat(){
         for (double car : latitudeList) {
             std:: cout << car << "\n";
         }
-
-        std::ofstream outFile("LocationData.json", std::ofstream::trunc); // Open the file in truncate mode to wipe old data
-        nlohmann::json jsonData; // Create a JSON object
-        jsonData["longitude"] = longitudeList; // Add the list of data to the JSON object
-        jsonData["latitude"] = latitudeList; // Add the list of data to the JSON object
-        outFile << jsonData.dump(4); // Write the JSON object to the file with indentation
-        outFile.close(); // Close the file after writing
-
+        
         break; // Exit the loop if the user types "exit"
     }
         std::string latitude = gain("Latitude");
@@ -62,12 +55,15 @@ void gainLongAndLat(){
 int main() {
 
 std::string menu = gain("Create a new file (1), use existing file (2), or exit (3)");
+const std::string userDataFolder = "User Data Files/";
+
 if (menu == "1") {
     std::string newFileName = gain("Enter the name of the new file (Include .json at the end)");
+    std::string fullPath = userDataFolder + newFileName;
 
     gainLongAndLat(); //Gain info from user and store in lists
-    
-    std::ofstream file(newFileName, std::ofstream::trunc); // Create a new file and open it in truncate mode to ensure it's empty
+
+    std::ofstream file(fullPath, std::ofstream::trunc); // Create a new file in User Data Files
     nlohmann::json jsonData; // Create a JSON object
     jsonData["longitude"] = longitudeList; // Add the list of data to the JSON
     jsonData["latitude"] = latitudeList; // Add the list of data to the JSON object
@@ -77,19 +73,17 @@ if (menu == "1") {
 }
 else if (menu == "2") {
     std::string oldFileName = gain("What is the name of the file you want to use? (Include .json at the end)");
-
-    std::string safetyCheck = gain("Are you sure you want to use this file, will wipe existing data? (y/n)");
+    std::string fullPath = userDataFolder + oldFileName;
+    std::string safetyCheck = gain("Are you sure you want to use this file, doing so will wipe existing data? (y/n)");
     if (safetyCheck == "y") {
         gainLongAndLat(); //Gain info from user and store in lists
-
-        std::ofstream outFile(oldFileName, std::ofstream::trunc); // Open the file in truncate mode to wipe old data
+        std::ofstream outFile(fullPath, std::ofstream::trunc); // Open the file in User Data Files
         nlohmann::json jsonData; // Create a JSON object
         jsonData["longitude"] = longitudeList; // Add the list of data to the JSON object
         jsonData["latitude"] = latitudeList; // Add the list of data to the JSON object
         outFile << jsonData.dump(4); // Write the JSON object to the file with indentation
         outFile.close(); // Close the file after writing
-    
-    }else if (safetyCheck == "n") {
+    } else if (safetyCheck == "n") {
         std::cout << "Exiting program.\n";
     }
 }
