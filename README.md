@@ -17,8 +17,8 @@
      a. In the app search bar, look for Edit environment variables for your account
      b. Go to user variables -> Path, then click edit
      c. Select new and add the following path: ...\ucrt64\bin
-       i. If you placed the file in the previously reccomended location, your adress would look           like C:\cppCompiler\ucrt64\bin
-8. Verify your installation was successful by entering "gcc --version" into the terminal
+       1. If you placed the file in the previously reccomended location, your adress would look           like C:\cppCompiler\ucrt64\bin
+9. Verify your installation was successful by entering "gcc --version" into the terminal
    a. If an error shows, visit the [vscode instructions](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites) for troubleshooting
 
 ## How to download python
