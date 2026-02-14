@@ -49,10 +49,11 @@
         function loadFile() {
             var fileName = document.getElementById('fileNameInput').value;
             if (!fileName) {
-                alert('Please enter a filename or address.');
+                alert('Please enter a filename.');
                 return;
             }
-            fetch(fileName)
+            var filePath = 'User Data Files/' + fileName;
+            fetch(filePath)
                 .then(response => {
                     if (!response.ok) throw new Error('File not found or inaccessible');
                     return response.json();
