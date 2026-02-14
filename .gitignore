@@ -1,4 +1,4 @@
 .vscode
 desktop.ini
-locationData.json
+*.json
 GTAM_Point_Dropper.exe
