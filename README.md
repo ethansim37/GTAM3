@@ -26,7 +26,7 @@
 2. Run the app and follow the app's instructions
 
 ## How to Run the C++ Program
-1. Open PowerShell in the GTAM3 folder
+1. Open the GTAM3 folder in the terminal (right-click on folder and left-click "open in terminal")
 2.If it's the first time running since changes to the code, paste:  "g++ main.cpp -o GTAM_Point_Dropper"   into the terminal
 4. Run the program by pasting ".\GTAM_Point_Dropper.exe" into the terminal
 
