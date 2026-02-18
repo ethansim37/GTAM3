@@ -1,3 +1,5 @@
 .vscode
 desktop.ini
 *.json
+User Data Files/*
+!User Data Files/.gitkeep
