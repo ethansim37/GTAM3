@@ -6,7 +6,7 @@
 
 ## How to download python
 1. Visit [the python download website](https://www.python.org/downloads/) and click "Download Python install manager"  
-2. Run the app and follow the app's instructions
+2. Run the app and follow the app's instructions (respond "y" to all prompts)
 
 ## How to download GTAM3
 1. Create a folder in your local downloads folder named GTAM 3
@@ -16,7 +16,7 @@
 
 ## How to Run the C++ Program
 1. Double click the GTAM_Point_Dropper.exe file in the GTAM 3 folder. This will launch the app
-6. Follow instructions given
+6. Follow instructions given by the app
 
 ## How to View the Map
 1. Open PowerShell in this folder  
@@ -25,4 +25,4 @@
    ````
    python -m http.server 8000
 5. Open your browser and visit: http://localhost:8000/
-6. On the top left, input the name of the file you previously used/created on the pin dropper app (do not put entire adress, just the name)  
+6. On the top left, input the name of the file you previously used/created on the pin dropper app (do not put entire adress of the file, just the name)  
