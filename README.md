@@ -37,10 +37,10 @@
 2. Run the app and follow the app's instructions
 
 ## How to download GTAM3
-1. Create a folder in your local downloads folder named "****************************"
+1. Create a folder in your local downloads folder named GTAM 3
 2. Click the green "Code" button on the top of this page
 3. Click "download zip"
-4. Once the zip is downloaded, extract all files into the folder named "********" in your downloads
+4. Once the zip is downloaded, extract all files into the folder named GTAM 3 in your downloads
 
 ## How to Run the C++ Program
 1. Open the GTAM3 folder in the terminal (right-click on folder and left-click "open in terminal")  
