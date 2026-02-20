@@ -12,7 +12,7 @@
 1. Create a folder in your local downloads folder named GTAM 3
 2. Click the green "Code" button on the top of this page
 3. Click "download zip"
-4. Once the zip is downloaded, extract all files into the folder named GTAM 3 in your downloads
+4. Once the zip is downloaded, extract all files into the folder named GTAM 3 in your downloads (it must be named "GTAM 3" exactly and in your "downloads")
 
 ## How to Run the C++ Program
 1. Double click the GTAM_Point_Dropper.exe file in the GTAM 3 folder. This will launch the app
