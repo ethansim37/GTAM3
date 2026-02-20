@@ -6,7 +6,7 @@
 
 ## How to download python
 1. Visit [the python download website](https://www.python.org/downloads/) and click "Download Python install manager"  
-2. Run the app and follow the app's instructions (respond "y" to all prompts)
+2. Run the app and follow the app's instructions [respond "y" to all prompts except for the last one (view online help)]
 
 ## How to download GTAM3
 1. Create a folder in your local downloads folder named GTAM 3
