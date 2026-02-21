@@ -7,7 +7,7 @@
 ### How to download the C++ compiler ([here](https://code.visualstudio.com/docs/cpp/config-mingw#_prerequisites) for detailed instructions)
 1. Click the [direct downloader.exe](https://github.com/msys2/msys2-installer/releases/download/2025-08-30/msys2-x86_64-20250830.exe)
 2. Follow the instructions of the installation wizard
-   — Choose the desired installation folder, I recommend creating a folder in C: named "cppCompiler" then downloading here
+   — Choose the desired installation folder, I recommend creating a folder in C: (located under "this PC") named "cppCompiler" then downloading here
 3. The terminal will automatically open
 4. Paste:
 
