@@ -8,11 +8,12 @@
 1. Click the [direct downloader.exe](https://github.com/msys2/msys2-installer/releases/download/2025-08-30/msys2-x86_64-20250830.exe)
 2. Follow the instructions of the installation wizard
    — Choose the desired installation folder, I recommend creating a folder in C: (located under "this PC") named "cppCompiler" then downloading here
-3. The terminal will automatically open
-4. Paste:
+3. Choose the default option for start menu folder
+4. The terminal will then automatically open
+5. Paste:
 
    ````
-   pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+   pacman - S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 6. Press enter when prompted with "Enter a selection (default=all):
 7. Enter Y when prompted whether to proceed with the installation
 8. Add the path of the windows compiler to your system
