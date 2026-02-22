@@ -15,8 +15,15 @@
 4. Once the zip is downloaded, extract all files into the folder named GTAM 3 in your downloads
 
 ## How to Run the C++ Program
-1. Double click the GTAM_Point_Dropper.exe file in the GTAM 3 folder. This will launch the app
-6. Follow instructions given by the app
+1. If it is the first time running on this computer:
+   
+   a. Open the GTAM 3 folder in the terminal (right click the "GTAM 3" folder and click "open in terminal")
+   
+   b. Paste:
+   ````
+   g++ main.cpp -o GTAM_Point_Dropper
+4. If it is not the first time runnong double click the GTAM_Point_Dropper.exe file in the GTAM 3 folder. This will launch the app
+5. Follow instructions given by the app
 
 ## How to View the Map
 1. Open PowerShell in this folder  
