@@ -55,7 +55,7 @@
 5. Follow instructions given by the app
 
 ## How to View the Map
-1. Open PowerShell in this folder  
+1. Open this folder in terminal  (right click the "GTAM 3" folder and click "open in terminal")
 2. Start a local server by pasting
 
    ````
