@@ -29,9 +29,9 @@ std::list<double> latitudeList; // Create a list to store the data
 
 void gainLongAndLat(){
   while (true) { // Infinite loop to continuously ask for user input
-    std::string longitude = gain("Longitude (Enter 'exit' to stop)");
+    std::string latitude = gain("Latitude (Enter 'exit' to stop)");
 
-    if (longitude == "exit"){
+    if (latitude == "exit"){
         std::cout << "Exiting program.\n";
 
         for (double car : longitudeList) {
@@ -44,7 +44,7 @@ void gainLongAndLat(){
         
         break; // Exit the loop if the user types "exit"
     }
-    std::string latitude = gain("Latitude");
+    std::string longitude = gain("Longitude");
     std::cout << "\n";
     
     longitudeList.push_back(std::stod(longitude));
